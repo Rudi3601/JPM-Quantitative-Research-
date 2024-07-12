@@ -30,10 +30,22 @@ future_dates_ordinal = np.array([date.tooridnal() for date in future_dates]).res
 
 future_prices = LinearRegression().fit(X, y).predict(future_dates_ordinal)
 
+
+
+"""Function to calculate future prices at future dates"""
+
+
 def future_day_price(day_str):
     day = datetime.strptime(day_str, '%Y-%m-%d')
     day_ordinal = day.toordinal()
 
     return future_prices[day_ordinal]
-    
+
+
+
+"""main pricing model"""
+
+
+
+def prototype_pricing_model():
 
