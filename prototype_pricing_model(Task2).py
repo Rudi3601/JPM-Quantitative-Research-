@@ -4,12 +4,14 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from datetime import datetime, timedelta
+from matplotlib import pyplot as plt
 
 
 """Loading data"""
 
 data = pd.read_csv('Nat_Gas.csv', parse_dates = ['Dates'])
-data['Prices'] = data['Prices'].astype(float)
+prices = data['Prices'].values                                          #extracting 'prices' as a numpy array
+dates = data['Dates'].values                                            #extracting 'dates' as a numpy array
 
 
 
